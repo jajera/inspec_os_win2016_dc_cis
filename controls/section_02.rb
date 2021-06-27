@@ -557,8 +557,8 @@ control '2.2.37_L1_Ensure_Manage_auditing_and_security_log_is_set_to_Administrat
   "
   impact 1.0
   tag cce: 'CCE-35906-7'
-  describe security_policy(translate_sid: true).SeSecurityPrivilege.select { |x| x =~ /S-1-5-(32-544|21-[0-9-]+-1677)/ } do
-    it { should eq security_policy(translate_sid: true).SeSecurityPrivilege }
+  describe security_policy(translate_sid: false).SeSecurityPrivilege.select { |x| x =~ /S-1-5-(32-544|21-[0-9-]+-1677)/ } do
+    it { should eq security_policy(translate_sid: false).SeSecurityPrivilege }
   end
 end
 
